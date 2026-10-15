@@ -1,0 +1,3 @@
+# Wymagane do zbudowania KN5Converter.exe (build.bat)
+-r requirements.txt
+pyinstaller>=6.0

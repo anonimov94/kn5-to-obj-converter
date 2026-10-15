@@ -1,4 +1,5 @@
 import os
+import sys
 import math
 import argparse
 import datetime
@@ -10,6 +11,10 @@ import numpy as np
 
 
 def cli():
+    # Konsola Windows (cp1250) nie zna emoji z komunikatów – zamiast wyjątku podmień znak
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(errors="replace")
+
     parser = argparse.ArgumentParser()
     parser.add_argument("path", help="Specify the path to the .kn5 model directory.")
     args = parser.parse_args()
